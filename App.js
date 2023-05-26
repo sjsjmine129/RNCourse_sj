@@ -5,7 +5,7 @@ export default function App() { // app component
   return (
     <View style={styles.container}> 
       <View>
-        <Text style={styles.testText}>Test the text</Text>
+        <Text style={styles.testText}>Test the text!!!</Text>
       </View>
       {/* inline style */}
       <Text style={styles.testText}>Hello, React Native</Text>

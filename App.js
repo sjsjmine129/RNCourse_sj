@@ -1,31 +1,56 @@
-import { StyleSheet, Text, View, Button } from 'react-native'; //recat native 에서 가져온 특수 헤더
+import { StyleSheet, Text, View, Button, TextInput } from 'react-native'; //recat native 에서 가져온 특수 헤더
 
 
 export default function App() { // app component
+
+  
+
+
+
+
   return (
-    <View style={styles.container}> 
-      <View>
-        <Text style={styles.testText}>Test the text!!!</Text>
+    <View style={styles.appContainer}> 
+
+      <View style={styles.inputContainer}>
+        <TextInput  style={styles.textInput} placeholder="your Goal" />
+        <Button title="Add Goal"/>
       </View>
-      {/* inline style */}
-      <Text style={styles.testText}>Hello, React Native</Text>
-      <Button title="[TAP]" />
+
+      <View style={styles.goalsContainer}>
+        <Text>List</Text>
+      </View>
+
     </View>
     
   );
 }
 
 const styles = StyleSheet.create({  //or inline style  -> CSS 불가능
-  container: {
+  appContainer:{
     flex: 1,
-    backgroundColor: '#fff',
+    paddingTop: 50,
+    paddingHorizontal: 16,
+  },
+
+  inputContainer:{
+    flex: 1,
+    flexDirection: 'row',  //옆으로 작동
+    justifyContent: 'space-between',
     alignItems: 'center',
-    justifyContent: 'center',
+    marginBottom: 20,
+    borderBottomWidth: 2,
+    borderBottomColor: 'black',
   },
-  testText:{
-    margin: 16, 
-    borderWidth: 2, 
-    borderColor: 'blue', 
-    padding: 16,
+
+  textInput: {
+    borderWidth: 1,
+    borderColor: '#cccccc',
+    width: '73%',
+    marginRight: 8,
+    padding: 8,
   },
+
+  goalsContainer:{
+    flex: 5,
+  }
 });

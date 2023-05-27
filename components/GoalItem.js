@@ -5,10 +5,10 @@ function GoalItem(props){
     return (
         <Pressable 
             onPress = {props.onDeleteItem.bind(this, props.id)}
-            style = {({pressed})=> pressed && styles.pressedItem}
+            style = {({pressed})=> pressed && styles.pressedItem} //누름 이 true면 스타일 재적용
         >
             <View  style={styles.goalItem}>
-                <Text style={styles.goalText}>{props.text}</Text>
+                <Text style={styles.goalText}>{props.id +". "+ props.text}</Text>
             </View>
         </Pressable>
     );

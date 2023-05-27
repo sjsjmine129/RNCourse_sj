@@ -17,6 +17,13 @@ export default function App() { // app component
     ]);
   }
 
+
+  function deleteGoalHandler(id){
+    setMyGoals(currentCourseGoal=>{
+      return currentCourseGoal.filter( (goal)=>  goal.id !== id ); //안에 함수 true면 유지 아니면 삭제
+    });
+  }
+
   return (
     <View style={styles.appContainer}> 
 
@@ -26,7 +33,11 @@ export default function App() { // app component
         {/* flatList 함수로 전달할 데이터, data가 전달됨 */}
         <FlatList data={myGoals} 
           renderItem={ (itemData) =>{ 
-            return <GoalItem text={itemData.item.text} />;
+            return <GoalItem 
+              text={itemData.item.text} 
+              id={itemData.item.id}
+              onDeleteItem={deleteGoalHandler} 
+            />;
           }} 
           keyExtractor={(item, index)=>{
             return item.id;

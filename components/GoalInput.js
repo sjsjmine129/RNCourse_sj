@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 
 function GoalInput(props){
-    //      state           state 설정 함수           초기값
+    //      state           state 설정 함수        초기값
     const [enteredGoalText, setGoalText ] = useState(''); // 입력 칸에 들어있는 text
 
     function goalInputHandler(enteredText){ //입력시 입력값으로 갱신하는 함수
